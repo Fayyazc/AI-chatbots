@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus Tech Solutions | AI-Powered Enterprise Cloud</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(18, 24, 38, 0.7);
+      --primary: #6366f1;
+      --primary-glow: rgba(99, 102, 241, 0.4);
+      --accent: #38bdf8;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(at 15% 15%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 85% 85%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
+      background-attachment: fixed;
+    }
+    header {
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-badge {
+      background: linear-gradient(135deg, var(--primary) 0%, #a855f7 100%);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+      box-shadow: 0 4px 12px var(--primary-glow);
+    }
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--text);
+    }
+    .btn-header {
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px var(--primary-glow);
+      transition: transform 0.2s;
+    }
+    .btn-header:hover {
+      transform: translateY(-2px);
+    }
+    .hero {
+      max-width: 1100px;
+      margin: 80px auto 60px;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #38bdf8;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 52px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto 36px;
+    }
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+    .btn-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #4f46e5 100%);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      box-shadow: 0 8px 25px var(--primary-glow);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-hero:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px var(--primary-glow);
+    }
+    .btn-hero-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-hero-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .features {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      backdrop-filter: blur(12px);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(99, 102, 241, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .widget-notice {
+      max-width: 900px;
+      margin: 60px auto;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.1) 100%);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
+    }
+    .widget-notice h2 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+    .widget-notice p {
+      color: #cbd5e1;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header>
+    <div class="logo">
+      <div class="logo-badge">⚡</div>
+      <span>Nexus Tech Solutions</span>
+    </div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="http://localhost:3000" target="_blank">SaaS Admin Dashboard ↗</a>
+    </nav>
+    <a href="http://localhost:3000" target="_blank" class="btn-header">Open Dashboard</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-badge">
+      ✨ Embedded AI Customer Support Live Demo
+    </div>
+    <h1>Empower Your Business With Next-Gen Gemini AI Customer Service</h1>
+    <p>
+      Instant answers, 24/7 automated support, and seamless website integration. Test our AI Chatbot floating in the bottom-right corner of this page!
+    </p>
+    <div class="hero-buttons">
+      <button class="btn-hero" onclick="openWidget()">💬 Chat with AI Assistant</button>
+      <a href="http://localhost:3000" target="_blank" class="btn-hero-secondary">Configure Bot in SaaS</a>
+    </div>
+  </section>
+
+  <!-- Feature Grid -->
+  <section class="features" id="features">
+    <div class="card">
+      <div class="card-icon">🧠</div>
+      <h3>Gemini 1.5/2.0 Intelligence</h3>
+      <p>Powered by Google's latest Gemini models to deliver context-aware, human-like answers derived directly from your Knowledge Base.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>1-Line JS Embed (widget.js)</h3>
+      <p>Zero dependencies. Embed on WordPress, Shopify, Webflow, React, or standard HTML sites instantly with a single script tag.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏢</div>
+      <h3>Multi-Tenant Architecture</h3>
+      <p>Built for SaaS scale. Manage multiple bots, separate business organizations, knowledge bases, and real-time conversation inboxes.</p>
+    </div>
+  </section>
+
+  <!-- Interactive Demo Callout -->
+  <section class="widget-notice">
+    <h2>👇 Look at the Bottom Right Corner!</h2>
+    <p>
+      The <strong>widget.js</strong> customer support launcher icon is actively running on this website. Click the floating chat bubble in the bottom right corner to test asking questions about <em>pricing</em>, <em>support hours</em>, or <em>installation</em>!
+    </p>
+    <button class="btn-hero" onclick="openWidget()">Test AI Chatbot Now</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Nexus Tech Solutions & OmniBot AI SaaS. Built with React + Express + Firebase + Gemini API.</p>
+  </footer>
+
+  <!-- EMBEDDABLE WIDGET.JS SCRIPT TAG -->
+  <script src="http://localhost:5000/widget.js" data-bot-id="bot_nexus_support"></script>
+
+  <script>
+    function openWidget() {
+      const launcher = document.querySelector('.ai-widget-launcher');
+      if (launcher) {
+        launcher.click();
+      } else {
+        alert('Widget launcher script is initializing...');
+      }
+    }
+  </script>
+</body>
+</html>
